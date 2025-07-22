@@ -5,12 +5,12 @@ import cv2
 from random import randint
 from .dcp import estimate_transmission
 
-from .networks import img_size
+from .config import RESHAPE
 
-
-# img_size = 512
-
-RESHAPE = (img_size,img_size)
+def get_file_name(path):
+    basename = os.path.basename(path)
+    onlyname = os.path.splitext(basename)[0]
+    return onlyname
 
 def is_an_image_file(filename):
     IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', 'bmp']
